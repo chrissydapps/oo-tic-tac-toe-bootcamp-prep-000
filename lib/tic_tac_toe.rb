@@ -25,7 +25,7 @@ class TicTacToe
     index = input.to_i - 1
   end
 
-  def move(index, player)
+  def move(index, current_player)
     @board[index] = player
   end
 
@@ -42,14 +42,14 @@ class TicTacToe
     input = gets.strip
     index = input_to_index(input)
     if valid_move?(@board, index)
-      move(board, index, current_player(board))
+      move(board, index, current_player)
       display_board(board)
     else
       turn(board)
     end
   end
 
-  def turn_count(board)
+  def turn_count
     @board.count{|token| token == "X" || token == "O"}
     # number_of_turns = 0
     # board.each do |cell|
@@ -60,8 +60,8 @@ class TicTacToe
     # number_of_turns
   end
 
-  def current_player(board)
-    (turn_count(board) % 2 == 0) ? "X" : "O"
+  def current_player
+    (turn_count % 2 == 0) ? "X" : "O"
   end
 
   def won?(board)
