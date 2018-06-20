@@ -88,8 +88,8 @@ class TicTacToe
     won? || draw? || full?
   end
 
-  def winner(board)
-    won?(board).class != Array ? nil : board[won?(board)[0]]
+  def winner
+    won?.class != Array ? nil : @board[won?[0]]
   end
 
   def play(board)
