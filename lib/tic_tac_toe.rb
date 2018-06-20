@@ -50,13 +50,14 @@ class TicTacToe
   end
 
   def turn_count(board)
-    number_of_turns = 0
-    board.each do |cell|
-      if cell == "X" || cell == "O"
-        number_of_turns += 1
-      end
-    end
-    number_of_turns
+    @board.count{|token| token == "X" || token == "O"}
+    # number_of_turns = 0
+    # board.each do |cell|
+    #   if cell == "X" || cell == "O"
+    #     number_of_turns += 1
+    #   end
+    # end
+    # number_of_turns
   end
 
   def current_player(board)
