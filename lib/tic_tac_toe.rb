@@ -64,11 +64,11 @@ class TicTacToe
     (turn_count % 2 == 0) ? "X" : "O"
   end
 
-  def won?(board)
+  def won?
     WIN_COMBINATIONS.detect do |position|
-      if board[position[0]] == "X" && board[position[1]] == "X" && board[position[2]] == "X"
+      if @board[position[0]] == "X" && @board[position[1]] == "X" && @board[position[2]] == "X"
         position
-      elsif board[position[0]] == "O" && board[position[1]] == "O" && board[position[2]] == "O"
+      elsif @board[position[0]] == "O" && @board[position[1]] == "O" && @board[position[2]] == "O"
         position
       else
         false
